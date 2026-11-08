@@ -72,10 +72,10 @@ Make sure `~/.local/bin` is on your PATH (`source ~/.bashrc` after editing it).
 
 ### 2. Download QMK into this repo (once)
 
-From `/root/source/keyboard`:
+From `/root/source/keyboard-firmware`:
 
 ```bash
-qmk setup -H /root/source/keyboard/qmk_firmware -y
+qmk setup -H /root/source/keyboard-firmware/qmk_firmware -y
 ```
 
 This clones QMK into `qmk_firmware/`, makes it QMK's home folder, and
@@ -108,7 +108,7 @@ alternative, but Zadig is more reliable.
 
 ## Build
 
-From `/root/source/keyboard`:
+From `/root/source/keyboard-firmware`:
 
 ```bash
 cp -r keyboards/gmmkpro qmk_firmware/keyboards/gmmk/pro/rev1/ansi/keymaps/
@@ -121,7 +121,7 @@ qmk compile --compiledb -kb gmmk/pro/rev1/ansi -km gmmkpro
 - `--compiledb` also refreshes `qmk_firmware/compile_commands.json`, which
   is what lets nvim/clangd understand `keymap.c` (see [Editor setup](#editor-setup)).
 - Output: `qmk_firmware/gmmk_pro_rev1_ansi_gmmkpro.bin`. From Windows that's
-  `\\wsl.localhost\Ubuntu\root\source\keyboard\qmk_firmware\`.
+  `\\wsl.localhost\Ubuntu\root\source\keyboard-firmware\qmk_firmware\`.
 
 ## Flash
 
